@@ -78,7 +78,11 @@ for(i=0; i<graduates.length; i++){
 }
 
 universities.sort();
-console.log(universities)
+console.log("Using for loop with sort: ", universities)
+
+//Redid after seeing we are allowed to use the methods:
+const universitiesTwo = graduates.map(obj => obj.university).sort();
+console.log("Using map with sort: ", universitiesTwo);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -92,21 +96,26 @@ for(i=0; i<graduates.length; i++){
     contactInfo[i] = graduates[i].first_name + " " + graduates[i].email;
 }
 
-console.log(contactInfo);
+console.log("Using for loop:", contactInfo);
 
+//Redid after seeing we are allowed to use the methods:
+const contactInfoTwo = graduates.map(obj => `${obj.first_name} ${obj.email}`);
+console.log("Using map:", contactInfoTwo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
 
-for(i=0; i<universities.length; i++){
-    if(universities[i].includes('Uni')){
-        uni.push(universities[i]);
+for(i=0; i<graduates.length; i++){
+    if(graduates[i].university.includes('Uni')){
+        uni.push(graduates[i].university);
     }
 
 }
-console.log(uni);
+console.log('Using for, if, includes, push:', uni);
 
-
+//Redid after seeing we are allowed to use the methods:
+const uniTwo = graduates.filter(obj => {return obj.university.includes('Uni')}).map(obj => obj.university);
+console.log("Using filter, includes, map:", uniTwo);
 // ==== ADVANCED Array Methods ====
 
 // Given this zoo data from around the United States, follow the instructions below.  Use the specific array methods in the requests below to solve the problems.

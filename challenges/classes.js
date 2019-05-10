@@ -35,5 +35,44 @@ class CubeMaker extends CuboidMakerClass {
 }
 
 let cube = new CubeMaker(5);
-console.log(cube.volume());
-console.log(cube.surfaceArea());
+console.log(`Cube volume: ${cube.volume()}`);
+console.log(`Cube surface area: ${cube.surfaceArea()}`);
+
+class TriangularPrism extends  CuboidMakerClass {
+    constructor (length, base, height, slant) {
+        super (length, base, height);
+        this.slant = slant;
+    }
+
+    volume() {
+        return (1/2*this.width*this.length*this.height);
+    }
+
+    surfaceArea() {
+        return this.width*this.height + 2*this.length*this.slant + this.length*this.width
+    }
+
+
+}
+
+let triPrism = new TriangularPrism(10, 3, 5, 6);
+console.log(`Triangular Prism volume: ${triPrism.volume()}`);
+console.log(`Triangular Prism surface area: ${triPrism.surfaceArea()}`);
+
+class Sphere {
+    constructor (radius){
+        this.radius = radius;
+    }
+
+    volume() {
+        return 4/3*Math.PI*(Math.pow(this.radius, 3));
+    }
+
+    surfaceArea() {
+        return 4*Math.PI*(Math.pow(this.radius,2));
+    }
+}
+
+let ball = new Sphere (3);
+console.log(`Sphere volume: ${ball.volume()}`);
+console.log(`Sphere surface area: ${ball.surfaceArea()}`);
