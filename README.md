@@ -38,7 +38,7 @@ Both functions and methods take inputs to return values, however, a method is an
 
 3. What is closure?
 
-Closure is when an inner function has access to the outer function's variables; closure allows us to hide secret/private values. 
+Closure is when an inner function has access to the outer function's variables; closure allows us to hide secret/private values. It is useful because the function that is a part of the closure can 'remember' the environment in which it was created; therefore, saving the private variables that we normally would not be able to access in the global scope. 
 
 4. Describe the four rules of the 'this' keyword.
 
